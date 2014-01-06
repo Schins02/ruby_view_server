@@ -22,6 +22,7 @@
       <%=link_to('Minor League Baseball', 'www.milb.com') %>
         <p>*Schindler*</p>
         <%= Time.now %>
+        <br>
       <% if @request.query['first_name'] && !@request.query['first_name'].empty? %>
         Hello there <%= @request.query['first_name'] %>
       <% else %>
