@@ -21,6 +21,15 @@
       <%= link_to('Lone Star Ball', 'www.lonestarball.com') %>
       <%=link_to('Minor League Baseball', 'www.milb.com') %>
         <p>*Schindler*</p>
+        <%= Time.now %>
+      <% if @request.query['first_name'] && !@request.query['first_name'].empty? %>
+        Hello there <%= @request.query['first_name'] %>
+      <% else %>
+             <form method='post' action="<%= @request.path %>">
+            First name: <input type="text" name="first_name" placeholder='first name'/><br />
+            <input type="submit" value="Submit" />
+      <% end %>
+        </form>
     </div>
   </body>
 </html>
